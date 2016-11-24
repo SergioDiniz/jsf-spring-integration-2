@@ -6,11 +6,23 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	
 >
-<head>
+<h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Inicio</title>
-</head>
-<body>
+</h:head>
+<h:body>
 
-</body>
+	<h:form>
+		
+		<h:panelGrid columns="2">
+			<p:outputLabel value="Nome: " for="nome" />
+			<p:inputText value="#{userController.user.nome}" id="nome"/>
+			
+		</h:panelGrid>
+	
+		<p:commandButton value="Cadastrar" ajax="false" action="#{userController.addUser()}" />
+	
+	</h:form>
+
+</h:body>
 </html>

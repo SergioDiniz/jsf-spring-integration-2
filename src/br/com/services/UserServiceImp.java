@@ -3,30 +3,32 @@ package br.com.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import br.com.beans.User;
 import br.com.dao.UserDao;
 
+@Component
 @Service("userService")
 public class UserServiceImp implements UserService {
 
 	@Autowired
-	private UserDao dao;
+	UserDao userDao;
 	
 	@Override
 	public void add(User user) {
-		dao.add(user);
+		userDao.add(user);
 	}
 
 	@Override
 	public User find(int id) {
-		return dao.find(id);
+		return userDao.find(id);
 	}
 
 	@Override
 	public List<User> list() {
-		return dao.list();
+		return userDao.list();
 	}
 
 }

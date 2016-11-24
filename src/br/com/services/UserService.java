@@ -6,8 +6,8 @@ import br.com.beans.User;
 
 public interface UserService {
 
-	void add (User user);
-	User find(int id);
-	List<User> list();
+	public void add (User user);
+	public User find(int id);
+	public List<User> list();
 	
 }
