@@ -12,14 +12,15 @@
 </h:head>
 <h:body>
 
-	<h:form>
+	<h:form enctype="multipart/form-data">
 		
 		<h:panelGrid columns="2">
 			<p:outputLabel value="Nome: " for="nome" />
 			<p:inputText value="#{userController.user.nome}" id="nome"/>
 			
+			
 		</h:panelGrid>
-	
+		<p:fileUpload mode="simple" label="Arquivo" skinSimple="true" value="#{userController.file}"/>
 		<p:commandButton value="Cadastrar" ajax="false" action="#{userController.addUser()}" />
 	
 	</h:form>
